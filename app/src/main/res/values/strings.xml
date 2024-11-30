@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">All fives dominoes: The scoreboard</string>
+    <string name="app_bar_title">All Fives Dominoes</string>
+
+    <!-- Common related -->
+    <string name="button_okay">Okay</string>
+    <string name="button_cancel">Cancel</string>
+
+    <!--  Home screen related  -->
+    <string name="home_create_new_game_title">Create new game</string>
+
+    <!--  New game related  -->
+    <string name="new_game_title">Set up new game</string>
+    <string name="new_game_select_player">Select players / max. 4</string>
+    <string name="new_game_select_no_player">No player available.</string>
+    <string name="new_game_start_game">Start Game</string>
+    <string name="new_game_selected">Selected: </string>
+    <string name="new_game_add_new_player">Add</string>
+    <string name="new_game_add_new_player_dialog_title">Name the new player!</string>
+    <string name="new_game_add_new_player_dialog_text_field_placeholder">Name</string>
+    <string name="new_game_add_new_player_dialog_text_field_placeholder_error">This field cannot be empty!</string>
+    <string name="new_game_too_many_player_error_dialog_title">Too many players!</string>
+    <string name="new_game_too_many_player_error_dialog_description">Maximum 4 player can play!</string>
+    <string name="new_game_too_less_player_error_dialog_title">Not enough player/</string>
+    <string name="new_game_too_less_player_error_dialog_description">Minimum 2 player can play!\nPlease select at least 2 player!</string>
+
+    <!-- Game related -->
+    <string name="game_next">Next</string>
+    <string name="game_winner_dialog_title">The winner is:</string>
+    <string name="game_winner_dialog_score">Score: %s</string>
+
+
+</resources>
