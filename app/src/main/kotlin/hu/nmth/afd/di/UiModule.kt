@@ -2,6 +2,7 @@ package hu.nmth.afd.di
 
 import hu.nmth.afd.feature.game.GameViewModel
 import hu.nmth.afd.feature.newgame.NewGameViewModel
+import hu.nmth.afd.feature.players.PlayersViewModel
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
@@ -15,4 +16,5 @@ val uiModule = module {
             player4 = parameters.get(),
         )
     }
+    viewModel { PlayersViewModel(get()) }
 }

@@ -13,8 +13,11 @@ import hu.nmth.afd.feature.home.HomeScreen
 import hu.nmth.afd.feature.home.HomeScreenDestination
 import hu.nmth.afd.feature.newgame.NewGameScreen
 import hu.nmth.afd.feature.newgame.NewGameScreenDestination
+import hu.nmth.afd.feature.players.PlayersNavDestination
+import hu.nmth.afd.feature.players.PlayersScreen
 import hu.nmth.afd.navigation.typeutil.parcelableType
 import kotlin.reflect.typeOf
+
 
 @Composable
 fun AdfNavHost(
@@ -29,6 +32,11 @@ fun AdfNavHost(
                 navigateToNewGame = {
                     navController.navigate(
                         NewGameScreenDestination
+                    )
+                },
+                navigateToPlayers = {
+                    navController.navigate(
+                        PlayersNavDestination
                     )
                 }
             )
@@ -64,6 +72,10 @@ fun AdfNavHost(
                     }
                 }
             )
+        }
+
+        composable<PlayersNavDestination> {
+            PlayersScreen()
         }
     }
 }

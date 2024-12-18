@@ -1,14 +1,14 @@
 package hu.nmth.afd.feature.home
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -17,19 +17,25 @@ import hu.nmth.afd.R
 import hu.nmth.afd.designsystem.theme.AfdTheme
 import hu.nmth.afd.designsystem.theme.spacing
 import hu.nmth.afd.designsystem.ui.components.AfdAppBar
+import hu.nmth.afd.designsystem.ui.components.buttons.AfdButton
+import hu.nmth.afd.feature.home.components.HomeLeaderBoard
+import hu.nmth.afd.feature.home.components.NewGameCard
 
 @Composable
 fun HomeScreen(
-    navigateToNewGame: () -> Unit
+    navigateToNewGame: () -> Unit,
+    navigateToPlayers: () -> Unit,
 ) {
     HomeContent(
-        navigateToNewGame = navigateToNewGame
+        navigateToNewGame = navigateToNewGame,
+        navigateToPlayers = navigateToPlayers,
     )
 }
 
 @Composable
 private fun HomeContent(
-    navigateToNewGame: () -> Unit
+    navigateToNewGame: () -> Unit,
+    navigateToPlayers: () -> Unit
 ) {
     Box(modifier = Modifier.fillMaxSize()) {
         Column(
@@ -39,22 +45,28 @@ private fun HomeContent(
 
             Column(
                 modifier = Modifier
+                    .fillMaxHeight()
                     .fillMaxWidth()
-                    .padding(horizontal = MaterialTheme.spacing.spacing400)
+                    .padding(horizontal = MaterialTheme.spacing.spacing400),
+                verticalArrangement = Arrangement.SpaceBetween
             ) {
-                // Title of create new game
-                Text(
-                    modifier = Modifier.fillMaxWidth(),
-                    text = stringResource(id = R.string.home_create_new_game_title),
-                    style = MaterialTheme.typography.displayMedium,
-                    color = MaterialTheme.colorScheme.primary
+                NewGameCard(
+                    modifier = Modifier
+                        .padding(top = MaterialTheme.spacing.spacing600)
+                        .padding(horizontal = MaterialTheme.spacing.spacing400),
+                    startGameCreate = navigateToNewGame
                 )
 
-                Button(
-                    onClick = navigateToNewGame
-                ) {
-                    Text(text = "navigate to new game")
-                }
+                HomeLeaderBoard()
+
+                AfdButton(
+                    modifier = Modifier
+                        .navigationBarsPadding()
+                        .padding(bottom = MaterialTheme.spacing.spacing300)
+                        .padding(horizontal = MaterialTheme.spacing.spacing400),
+                    label = stringResource(id = R.string.home_edit_players_button_label),
+                    onClick = navigateToPlayers
+                )
             }
         }
 
@@ -66,7 +78,8 @@ private fun HomeContent(
 private fun HomeScreenPreview() {
     AfdTheme {
         HomeContent(
-            navigateToNewGame = {}
+            navigateToNewGame = {},
+            navigateToPlayers = {}
         )
     }
 }

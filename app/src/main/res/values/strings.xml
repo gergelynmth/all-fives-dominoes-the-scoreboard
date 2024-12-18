@@ -8,6 +8,10 @@
 
     <!--  Home screen related  -->
     <string name="home_create_new_game_title">Create new game</string>
+    <string name="home_create_new_game_button_label">Start</string>
+    <string name="home_edit_players_button_label">Edit players</string>
+    <string name="home_leaderboard_title">Leaderboard</string>
+    <string name="home_leaderboard_wins_title">Wins</string>
 
     <!--  New game related  -->
     <string name="new_game_title">Set up new game</string>
